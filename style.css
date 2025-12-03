@@ -1,4 +1,4 @@
-/* style.css - በፍፁም ትክክለኛ የ Layout ስሌት ላይ ያተኮረ */
+/* style.css (የተስተካከለ: አዝራሮች እንዲታዩ) */
 
 :root {
     --color-bg-dark: #12121e;
@@ -38,11 +38,13 @@ body {
     max-height: 98vh; 
 }
 
+/* ግራ እና ቀኝ ዋና ብሎኮች (የቁመት ክፍፍል ማስተካከያ) */
 .left-main-area, .right-main-area {
     width: 48%; 
     display: flex;
     flex-direction: column;
     gap: 8px; 
+    height: 100%; /* ሙሉውን ቁመት ይይዛሉ */
 }
 
 /* ===== የግራ አካል ንጥረ ነገሮች ===== */
@@ -67,13 +69,13 @@ body {
     border: 3px solid #d9534f;
     border-radius: 20px;
     flex-grow: 1; 
-    padding: 5px; /* ፓዲንግ ቀንሷል ግሪድ እንዲስማማ */
+    padding: 5px; 
     min-height: 0; 
-    display: flex; /* ለውስጥ ግሪዶች */
+    display: flex; 
 }
 
 .master-grid-container {
-    /* ይህ ክፍል ቁመቱን ከውስጥ ካሉት ንጥረ ነገሮች ጋር ለማጣጣም ተዋቅሯል */
+    /* ቁመት በ Flexbox ይወሰናል */
 }
 
 /* 3. መካከለኛ ክብ አዝራር */
@@ -91,7 +93,7 @@ body {
     justify-content: center;
 }
 
-/* 4. የታችኛው አዝራር (Exit) */
+/* 4. የታችኛው አዝራር (Exit, BINGO, Refresh) */
 .bottom-btn {
     padding: 10px;
     text-align: center;
@@ -99,9 +101,9 @@ body {
     border-radius: 15px;
     border: 3px solid #d9534f;
     font-size: 0.9em;
-    height: 7%; 
+    height: 7%; /* ቋሚ ቁመት ይይዛል */
     background-color: #3e3e3e; 
-    flex-shrink: 0;
+    flex-shrink: 0; /* እንዳይቀንስ ያደርጋል */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,28 +141,28 @@ body {
     background-color: #3e3e3e; 
 }
 
-/* ===== የ Master Grid (1-75) ቅንብሮች - በአዲሱ ኮንቴይነር ውስጥ ===== */
+/* ===== የ Master Grid (1-75) ቅንብሮች ===== */
 
 .master-grid {
     display: grid; 
-    grid-template-columns: repeat(5, 1fr); /* 5 አምዶች */
-    grid-template-rows: repeat(15, 1fr); /* 15 ረድፎች */
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(15, 1fr); 
     gap: 1px; 
     padding: 2px; 
-    flex-grow: 1; /* ሙሉውን ቦታ ይይዛል */
+    flex-grow: 1; 
     overflow: hidden; 
     background-color: #12121e;
     border-radius: 5px;
-    height: 100%; /* ሙሉ ቁመት */
+    height: 100%; 
 }
 
 .master-cell {
     background-color: #1f1c2c;
     color: #fff;
-    padding: 1px 0; /* padding ቀንሷል */
+    padding: 1px 0; 
     border-radius: 1px;
     text-align: center;
-    font-size: 0.6em; /* ፎንት ቀንሷል */
+    font-size: 0.6em; 
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -173,7 +175,7 @@ body {
     font-weight: bold;
 }
 
-/* ===== የ Player Card (5x5) ቅንብሮች - በአዲሱ ኮንቴይነር ውስጥ ===== */
+/* ===== የ Player Card (5x5) ቅንብሮች ===== */
 
 .bingo-card-player {
     display: grid;
