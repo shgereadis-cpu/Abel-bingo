@@ -73,7 +73,7 @@ function renderPlayerCard(cardId) {
                 if (CALLED_NUMBERS.includes(number)) {
                     cell.classList.add('marked');
                 }
-                // አሁን ክሊክ ሲደረግ ማርክ አይደረግም
+                // ቁጥሩን የመምረጥ ሎጂክ በአሁኑ ጊዜ አልተካተተም
             }
             playerCardElement.appendChild(cell);
         });
