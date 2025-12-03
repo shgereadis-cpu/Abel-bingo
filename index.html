@@ -8,20 +8,12 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <div class="top-info-bar">
-            <div class="logo-placeholder">C</div>
-            <div class="title-text">ጨዋታ ቢንጎ</div>
-            <div class="info-group">
-                <div class="info-box wallet-box">Wallet <span id="wallet-amount">107 ETB</span></div>
-                <div class="info-box stake-box">Stake <span id="stake-amount">10 ETB</span></div>
+        <div class="top-info-bar" style="display: none;">
             </div>
-        </div>
 
         <div class="game-area-grid">
             
             <div class="master-grid-wrapper"> 
-                <div id="called-number-display" class="called-number-display">B-11</div>
-                
                 <div id="master-grid" class="master-grid">
                 </div>
             </div>
@@ -32,16 +24,15 @@
                         </div>
                 </div>
                 
-                <div class="status-indicator">Bingo <span id="bingo-status" class="status-connected">Connected</span></div>
+                <div class="status-indicator" style="display: none;"></div>
             </div>
+
+            <div class="vacuum-area">
+                </div>
         </div>
 
-        <div class="action-buttons">
-            <button id="exit-btn" class="btn exit-btn">Exit</button>
-            <button id="bingo-btn" class="btn bingo-btn">Bingo</button>
-            <button id="refresh-btn" class="btn refresh-btn">Refresh</button>
-            <button id="reserve-btn" class="btn reserve-btn">Reserve</button>
-        </div>
+        <div class="action-buttons" style="display: none;">
+            </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
