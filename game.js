@@ -5,8 +5,6 @@ const LETTERS = ['B', 'I', 'N', 'G', 'O'];
 
 const masterGridElement = document.getElementById('master-grid');
 const playerCardElement = document.getElementById('player-bingo-card');
-// calledNumberDisplay አሁን ጥቅም ላይ አይውልም:
-// const calledNumberDisplay = document.getElementById('called-number-display'); 
 
 // ቋሚ የቢንጎ ካርዶች ክምችት (Pool) - ለሙከራ
 const STATIC_CARD_POOL = {
@@ -19,21 +17,19 @@ const STATIC_CARD_POOL = {
     }
 };
 
-// ለሙከራ የተጠሩ ቁጥሮች (Master Grid እና Card ላይ ማርክ ለማድረግ)
+// ለሙከራ የተጠሩ ቁጥሮች
 const CALLED_NUMBERS = [11, 4, 23, 42]; 
 
 // 1. 75 ቁጥሮችን Master Grid ላይ የሚሞላ ተግባር
 function renderMasterGrid() {
     masterGridElement.innerHTML = '';
     
-    // የ Master Grid ቁጥሮችን መሙላት
     for (let i = 1; i <= 75; i++) {
         const cell = document.createElement('div');
         cell.textContent = i;
         cell.classList.add('master-cell');
         cell.dataset.number = i;
 
-        // ከተጠሩ ቁጥሮች ጋር ማመሳሰል እና ማርክ ማድረግ
         if (CALLED_NUMBERS.includes(i)) {
             cell.classList.add('called');
         }
@@ -70,7 +66,6 @@ function renderPlayerCard(cardId) {
                 cell.classList.add('free-space', 'marked');
             } else {
                 cell.dataset.number = number;
-                // በራስ ሰር ማርክ ማድረግ (በተጠራ ቁጥር መሰረት)
                 if (CALLED_NUMBERS.includes(number)) {
                     cell.classList.add('marked');
                 }
@@ -80,19 +75,12 @@ function renderPlayerCard(cardId) {
     }
 }
 
-// 3. የጥሪ ቁጥሩን በቢንጎ ፊደል ማሳየት ተግባሩ ይወገዳል
-// function updateCalledNumberDisplay(number) { ... }
 
-
-// 4. ገጹ ሲከፈት ሁለቱንም ግሪዶች ማስጀመር
+// 3. ገጹ ሲከፈት ሁለቱንም ግሪዶች ማስጀመር
 document.addEventListener('DOMContentLoaded', () => {
-    // የመጨረሻውን የተጠራ ቁጥር ማሳየት የሚለው ጥሪ ይወገዳል
-    // updateCalledNumberDisplay(11); 
-    
     renderMasterGrid();
     renderPlayerCard('card-44'); 
 
-    // የ Telegram WebAppን ማስጀመር
     if (window.Telegram && window.Telegram.WebApp) {
         window.Telegram.WebApp.ready();
     }
